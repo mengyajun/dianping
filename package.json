@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors",
+    "mock": "node --harmony ./mock/server.js",
     "build": "rm -rf ./build && webpack"
   },
   "author": "",

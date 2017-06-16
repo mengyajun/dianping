@@ -1,12 +1,14 @@
-var app = require('koa')();
-var router = require('koa-router');
+const homead = require('./home/ad.js')
+const Koa = require('koa');
+const app = new Koa();
+const router = require('koa-router')();
 
+app.use(router['routes']());
 
-//首页广告
-var homeAdData = require('./home/ad.js');
-router.get('api/homead',function *(){
-	this.body = homeAdData;
-});
-
-app.use(router.routers()).use(router.allowedMethods());
+router.get('/',function(ctx,next){
+	ctx.body = "index";
+})
+router.get('/api/homead',function(ctx,next){
+	ctx.body = homead;
+})
 app.listen(3000);

@@ -61,12 +61,12 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 	],
 	devServer:{
-		// proxy:{
-		// 	'api':{
-		// 		target:'',
-		// 		secure:false
-		// 	}
-		// },
+		proxy:{
+			'/api':{
+				target:'http://localhost:3000',
+				secure:false
+			}
+		},
 		historyApiFallback:true,
 		inline:true,
 		hot:true,
