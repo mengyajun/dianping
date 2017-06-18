@@ -2,7 +2,7 @@ import {render} from 'react-dom';
 import React from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 import App from '../containers/index.jsx'
-import Home from '../containers/home/index.jsx'
+import Home from '../containers/Home/index.jsx'
 
 
 class RouterMap extends React.Component{

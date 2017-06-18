@@ -6,6 +6,7 @@ import LocalStore from '../util/localStore.js'
 import { CITYNAME } from '../config/localStoreKeys.js'
 import * as userActions from '../actions/actions.js' 
 
+
 class App extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -27,14 +28,12 @@ class App extends React.Component {
             cityName = '北京'
         }
         this.props.userInfoActions.userUpdate({
-            // userInfo:{cityName: cityName}
             cityName: cityName
         })
         this.setState({             // 更改状态
             initDone: true
         })
     }
-
 }
 function mapStateToProps(state) {
     return {

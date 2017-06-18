@@ -2,7 +2,7 @@ import * as actionTypes from '../constants/actionTypes/actionTypes.js';
 
 const initState = {};
 
-const userInfoReducer = function(state = initState,action){
+const userInfo = function(state = initState,action){
 	console.log(action.type);
 	switch(action.type){
 		case actionTypes.USER_UPDATE:
@@ -11,4 +11,4 @@ const userInfoReducer = function(state = initState,action){
 			return state;
 	}
 }
-export default userInfoReducer
+export default userInfo
