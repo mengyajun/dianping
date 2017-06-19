@@ -12,7 +12,13 @@ router.get('/',function(ctx,next){
 router.get('/api/homead',function(ctx,next){
 	ctx.body = homead;
 })
-router.get('/api/listdata',function(ctx,next){
+router.get('/api/listdata/:city/:page',function(ctx,next){
+	// console.log(ctx.params);
+	const params = ctx.params;
+	const paramCity = params.city;
+	const paramPage = params.page;
+	console.log(paramCity);
+	console.log(paramPage);
 	ctx.body = listdata;
 })
 app.listen(3000);

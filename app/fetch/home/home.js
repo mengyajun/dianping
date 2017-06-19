@@ -6,7 +6,7 @@ export function getAdData(){
 }
 
 export function getListData(city,page){
-	// const listRes = get('/api/listdata' + encodeURIComponent(city) + '/' + page);
-	const listRes = get('/api/listdata')
+	const listRes = get('/api/listdata/:' + encodeURIComponent(city) + '/:' + page);
+	// const listRes = get('/api/listdata')
 	return listRes;
 }

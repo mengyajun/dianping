@@ -21,12 +21,15 @@ class List extends React.Component{
 		return (
 			<div>
 				<h2 className='home-list-title'>猜你喜欢</h2>
-				{ this.state.listdata.length ? 
-				  <ListDataComponent listdata={this.state.listdata} /> : 
-				  <p>加载中...</p>
+				{ 
+					this.state.listdata.length ? 
+				    <ListDataComponent listdata={this.state.listdata} /> : 
+				    <p>加载中...</p>
 				}
 				{
-					this.state.hasMore ? <LoadMore/> : ''
+					this.state.hasMore ? 
+					<LoadMore isLoadingMore={this.state.isLoadingMore} LoadMoreFn={this.loadMoreData.bind(this)}/> : 
+					''
 				}
 			</div>			
 		)
@@ -35,17 +38,31 @@ class List extends React.Component{
 		//获取首页数据并展示
 		const city = this.props.cityName;
 		const listdata = getListData(city,0);
-		this.handleResult(listdata);
-		
-
+		this.handleResult(listdata);		
+	}
+	//加载更多数据处理
+	loadMoreData(){
+		this.setState({
+			isLoadingMore:true
+		})
+		const cityName = this.props.cityName;
+		const page = this.state.page;
+		const result = getListData(cityName,page);
+		this.handleResult(result);
+		this.setState({
+			isLoadingMore:false,
+			page:page+1
+		})
 	}
 	handleResult(result){
 		result.then(result => {
 			return result.json()
 		}).then(result => {
+			const data = result.data;
+			const hasMore = result.hasMore;
 			this.setState({
-				listdata:result.data,
-				hasMore:result.hasMore
+				listdata:this.state.listdata.concat(data),
+				hasMore:hasMore
 			})
 		})
 	}

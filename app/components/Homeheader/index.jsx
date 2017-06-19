@@ -1,6 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './homeHeader.less';
+import { Link } from 'react-router-dom'
 
 class HomeHeader extends React.Component{
 	constructor(props,context){
@@ -11,9 +12,11 @@ class HomeHeader extends React.Component{
 		return (
 			<div id="home-header" className="clear-fix">
 				<div className="float-left">
-					<span>{this.props.cityName}</span>
-					&nbsp;
-					<i className="icon-angle-down"></i>
+					<Link to='/city'>
+                        <span>{this.props.cityName}</span>
+                        &nbsp;
+                        <i className="icon-angle-down"></i>
+                    </Link>
 				</div>
 				<div className="float-right">
 					<i className="icon-user"></i>
@@ -27,25 +30,5 @@ class HomeHeader extends React.Component{
 			</div>
 		)
 	}
-	// render(){
-	// 	return (
-	// 		<div id="home-header" className="clear-fix">
-	// 			<div className="float-left">
-	// 				<span>北京</span>
-	// 				&nbsp;
-	// 				<i className="icon-angle-down"></i>
-	// 			</div>
-	// 			<div className="float-right">
-	// 				<i className="icon-user"></i>
-	// 			</div>
-	// 			<div className="home-header-middle">
-	// 				<div className="search-container">
-	// 					<i className="icon-search"></i>
-	// 					<input type="text" placeholder="请输入关键字"/>
-	// 				</div>
-	// 			</div>
-	// 		</div>
-	// 	)
-	// }
 }
 export default HomeHeader
