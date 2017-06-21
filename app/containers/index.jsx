@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import LocalStore from '../util/localStore.js'
 import { CITYNAME } from '../config/localStoreKeys.js'
 import * as userActions from '../actions/actions.js' 
-
+import { withRouter } from 'react-router-dom'
 
 class App extends React.Component {
     constructor(props, context) {
@@ -44,4 +44,4 @@ function mapDispatchToProps(dispatch) {
         userInfoActions: bindActionCreators(userActions, dispatch),
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(App)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));

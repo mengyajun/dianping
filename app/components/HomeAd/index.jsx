@@ -8,7 +8,6 @@ class HomeAd extends React.Component{
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
 	render(){
-
 		return (
 				<div id='home-ad'>
 					<h2>超值特惠</h2>
