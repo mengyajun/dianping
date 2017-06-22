@@ -2,20 +2,26 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import SearchHeader from '../../components/SearchHeader/index.jsx'
 import SearchList from '../../containers/Search/subpages/searchList.jsx'
-class Search extends React.Component{
+import{withRouter} from 'react-router-dom'
+
+class SearchDetail extends React.Component{
 	constructor(props,context){
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+		
 	}
-	render(){
-		const params = this.props.params;
-		console.log(params);
+	render(){		
 		return (
 			<div>
 				<SearchHeader />
+				<SearchList />
 			</div>			
 		)
 	}
+	componentDidMount(){
+		const params = this.props
+		console.log(params.match.params);
+	}
 }
 
-export default Search
+export default withRouter(SearchDetail) 

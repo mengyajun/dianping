@@ -23,13 +23,16 @@ class HomeHeader extends React.Component{
 					<i className="icon-user"></i>
 				</div>
 				<div className="home-header-middle">
-					<SearchInput enterHandle={this.enterHandle.bind(this)}/>
+					<Link to='/search'>
+						<SearchInput/>
+					</Link>
+					
 				</div>
 			</div>
 		)
 	}
-	enterHandle(value){
-		hashHistory.push('search/all'+encodeURIComponent(value));
-	}
+	// enterHandle(value){
+	// 	hashHistory.push('search/all'+encodeURIComponent(value));
+	// }
 }
 export default HomeHeader

@@ -1,17 +1,17 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-class SearchInput extends React.Component{
+class Star extends React.Component{
 	constructor(props,context){
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
 	render(){
 		return (
-			<p>SearchInput</p>
+			<p>Star</p>
 		)
 	}
 	
 }
 
-export default SearchInput
+export default Star

@@ -26,6 +26,7 @@ class SearchInput extends React.Component{
 		this.setState({
 			value:e.target.value
 		})
+		this.props.changeHandle(e);
 	}
 	keyUpHandle(e){
 		if (e.keyCode !== 13) {
