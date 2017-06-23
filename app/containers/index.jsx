@@ -28,7 +28,7 @@ class App extends React.Component {
             cityName = '北京'
         }
         this.props.userInfoActions.userUpdate({
-            cityName: cityName
+            cityName: cityName,
         })
         this.setState({             // 更改状态
             initDone: true

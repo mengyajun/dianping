@@ -18,8 +18,14 @@ router.get('/api/homead',function(ctx,next){
 const detailInfo = require('./detail/info.js')
 router.get('/api/detail/info/:id',function(ctx,next){	
 	ctx.body = detailInfo;
-	console.log(detailInfo)
 })
+
+const detailComment = require('./detail/comment.js')
+router.get('/api/detail/comment/:id',function(ctx,next){	
+	ctx.body = detailComment;
+	console.log(detailComment);
+})
+
 router.get('/api/listdata/:city/:page',function(ctx,next){
 	// console.log(ctx.params);
 	const params = ctx.params;

@@ -6,3 +6,10 @@ export function getInfoData(id){
 	console.log(result)
 	return result;
 }
+
+export function getCommentData(id){
+	const commentResult = get('/api/detail/comment/'+id)
+	console.log("comment result")
+	console.log(commentResult)
+	return commentResult;
+}

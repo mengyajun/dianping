@@ -13,7 +13,7 @@ class LoadMore extends React.Component{
 				{ 
 					this.props.isLoadingMore ?
 				    <div>加载中...</div> :
-				    <div onClick = {this.loadMoreFn.bind(this)}>加载更多</div>
+				    <div onClick = {this.loadMoreFn.bind(this)}>点击加载更多</div>
 				} 
 			</div>
 		)
