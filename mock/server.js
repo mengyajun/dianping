@@ -17,13 +17,20 @@ router.get('/api/homead',function(ctx,next){
 
 const detailInfo = require('./detail/info.js')
 router.get('/api/detail/info/:id',function(ctx,next){	
-	ctx.body = detailInfo;
+	let itemId = ctx.params.id;
+	let itemInfo;
+	 detailInfo.map((item,index) => {
+		if(item.id == itemId ){
+			itemInfo = item
+			return false;
+		}  
+	})
+	ctx.body = itemInfo;
 })
 
 const detailComment = require('./detail/comment.js')
 router.get('/api/detail/comment/:id',function(ctx,next){	
-	ctx.body = detailComment;
-	console.log(detailComment);
+	ctx.body = detailComment;	
 })
 
 router.get('/api/listdata/:city/:page',function(ctx,next){

@@ -1,13 +1,13 @@
-import * as actionTypes from '../constants/actionTypes/actionTypes.js';
+import * as storeTypes from '../constants/storeTypes/storeTypes.js';
 export function addGoods(data){
 	return {
-		type:actionTypes.STORE_ADD,
+		type:storeTypes.STORE_ADD,
 		data
 	}
 }
 export function rmGoods(data){
 	return {
-		type:actionTypes.STORE_RM,
+		type:storeTypes.STORE_RM,
 		data
 	}
 }

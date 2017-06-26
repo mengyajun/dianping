@@ -20,11 +20,9 @@ class GoodsInfo extends React.Component{
 	componentDidMount(){
 		const id = this.props.id;
 		const goodsRes = getInfoData(id);
-		console.log(goodsRes)
 		goodsRes.then(res => {
 			return res.json();
 		}).then(json => {
-			console.log(json)
 			this.setState({
 				data:json
 			})

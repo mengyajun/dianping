@@ -10,7 +10,6 @@ class CommentItem extends React.Component{
 	render(){
 		// 获取数据
         const item = this.props.data;
-        console.log(item)
         return (
             <div className="comment-item">
                 <h3>

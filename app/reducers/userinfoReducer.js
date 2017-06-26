@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/actionTypes/actionTypes.js';
 
-const initState = {};
+const initState = [];
 
 const userInfo = function(state = initState,action){
 	switch(action.type){
@@ -11,5 +11,14 @@ const userInfo = function(state = initState,action){
 		default:
 			return state;
 	}
+	// switch(action.type){
+	// 	case actionTypes.USER_UPDATE:
+	// 		state.cityName = action.data.cityName
+	// 		return state;
+	// 	case actionTypes.USER_SET:
+	// 		return state.push(action.data);
+	// 	default:
+	// 		return state;
+	// }
 }
 export default userInfo

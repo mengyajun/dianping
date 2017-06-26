@@ -8,6 +8,7 @@ import Search from '../containers/Search/index.jsx'
 import SearchDetail from '../containers/Search/SearchDetail.jsx'
 import Detail from '../containers/Detail/index.jsx'
 import Login from '../containers/Login/index.jsx'
+import User from '../containers/User/index.jsx'
 class RouterMap extends React.Component{
 	render(){
 		return (
@@ -19,6 +20,7 @@ class RouterMap extends React.Component{
 					<Route path='/search/:category' component={SearchDetail}/>
 					<Route path='/search'  exact component={Search} />
 					<Route path='/detail/:id' component={Detail}/>
+					<Route path='/user' component={User}/>
 				</App>
 			</BrowserRouter>
 			)

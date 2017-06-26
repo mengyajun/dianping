@@ -1,20 +1,24 @@
 import * as storeTypes from '../constants/storeTypes/storeTypes.js';
 
-const initState = {};
+const initState = [];
 
-const store = function(state = initState,action){
+const goodsStore = function(state = initState,action){
 	switch(action.type){
 		case storeTypes.STORE_ADD:
 			state.unshift(action.data);
 			return state;
 		case storeTypes.STORE_RM:
-			state.filter(item => {
-				item.id = action.data.id
+			let indexItem = state.map((item,index) => {
+				if(item.id === action.data.id){
+					return index	
+				}
 			})
+			state.splice(indexItem,1) 
+			console.log(state);
 			return state;
 		default:
 			return state;
 	}
 }
-export default store
+export default goodsStore
 
