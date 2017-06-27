@@ -10,25 +10,23 @@ class User extends React.Component{
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
 	render(){
+		const userInfo = this.props.userInfo
 		return (
 			<div>
 				<Header title="用户中心" />
-				<UserInfo username={this.userInfo.userName} city={this.userInfo.cityName}/>
-                <OrderList username={userInfo.username}/>
+				<UserInfo username={userInfo.userName} city={userInfo.cityName}/>
+                <OrderList username={userInfo.userName}/>
 			</div>
 		)
 	}
-	    componentDidMount() {
-	    	const userInfo = this.props.userInfo;
+	componentDidMount() {
+	    const userInfo = this.props.userInfo;
         // 如果未登录，跳转到登录页面
         if ( userInfo.hasOwnProperty("userName")) {
 			return true;			
 		}else{
 			this.props.history.push('/login');
 		}
-        // if (!this.props.userinfo.username) {
-        //     this.props.history.push('/login');
-        // }
     }
 }
 // -------------------redux react 绑定--------------------

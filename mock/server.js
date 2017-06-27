@@ -33,6 +33,19 @@ router.get('/api/detail/comment/:id',function(ctx,next){
 	ctx.body = detailComment;	
 })
 
+const orderList = require('./orderlist/orderList.js')
+router.get('/api/orderlist/:username', function(ctx,next) {
+    ctx.body = orderList
+})
+
+router.post('/api/submitComment', function(ctx,next) {
+    // 获取参数
+
+    ctx.body = {
+        errno: 0,
+        msg: 'ok'
+    }
+})
 router.get('/api/listdata/:city/:page',function(ctx,next){
 	// console.log(ctx.params);
 	const params = ctx.params;

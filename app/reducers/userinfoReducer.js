@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/actionTypes/actionTypes.js';
 
-const initState = [];
+const initState = {};
 
 const userInfo = function(state = initState,action){
 	switch(action.type){

@@ -21,7 +21,7 @@ class OrderList extends React.Component {
                 {
                     this.state.data.length
                     ? <OrderListComponent data={this.state.data}/>
-                    : <div>{/* loading */}</div>
+                    : <div>loading...</div>
                 }
             </div>
         )
@@ -29,6 +29,7 @@ class OrderList extends React.Component {
     componentDidMount() {
         // 获取订单数据
         const username = this.props.username
+        console.log(username)
         if (username) {
             this.loadOrderList(username)
         }
@@ -38,6 +39,7 @@ class OrderList extends React.Component {
         result.then(res => {
             return res.json()
         }).then(json => {
+            console.log(json)
             // 获取数据
             this.setState({
                 data: json
