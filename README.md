@@ -1,6 +1,6 @@
 # dianping
-用react开发模拟大众点评的项目，里面包含的页面由登录页，主页，用户中心页，选择城市页面，搜索页，商品详情页，订单评价展示和评价页，基本算是一个完整的app，
-前端所用到的技术有webpack + es6 + react + react-router + redux，以下为package.json文件
+用react开发模拟大众点评的项目，里面包含的页面由登录页，主页，用户中心页，选择城市页面，搜索页，商品详情页，订单评价展示和评价页，基本算是一个完整的app</br>前端所用到的技术有webpack + es6 + react + react-router + redux，以下为package.json文件<br>
+```
 {
   "name": "dianping",
   "version": "1.0.0",
@@ -50,7 +50,8 @@
     "url-loader": "^0.5.8"
   }
 }
-后端采用koa框架来mock数据。
+```
+后端采用koa框架来mock数据。<br>
 由于使用的版本都比较新，踩了很多坑，可是还是最后通过各种方法还是解决了，收获很多。
 
 
